@@ -1,0 +1,13 @@
+rules:
+- id: naked-return
+  languages: [ go ]
+  pattern: |
+    func $FUNC(...) $RET {
+      ...
+      return
+      ...
+    }
+  message: |
+    Naked return should be avoided for readability
+  severity: WARNING
+
